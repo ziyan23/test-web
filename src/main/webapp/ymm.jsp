@@ -1,13 +1,14 @@
+<%@ page import="com.ymm.response.GetverifycodeResponse" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<title>Other</title>
+<title>运满满</title>
 <%@ include file="decorators.jsp" %>
 <div class="page-header" align="center">
   <h1>
-    <small>云马相关</small>
+    <small>运满满相关</small>
   </h1>
 </div>
 <div align="center">
@@ -24,13 +25,20 @@
         </table>
       </td>
     </tr>
+
+    <script language="javascript">
+      function results(verifycode){
+        alert("验证码："+ verifycode)
+      }
+    </script>
+
     </thead>
 
     <tbody>
-
     <tr>
       <td>
-        <form target="_blank" class="form-inline" role="form" action="/getverifycode" method="post">
+        <form target="_blank" class="form-inline" role="form" action="/ymm/getverifycode" method="post">
+          <center>验证码:${requestScope.verifycode}</center>
           <div align="center">
             <table>
               <tr>

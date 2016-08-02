@@ -20,9 +20,8 @@
                 <li class="dropdown">
               			<a href="#" class="dropdown-toggle" data-toggle="dropdown">切换环境<b class="caret"></b></a>
 		             	<ul class="dropdown-menu">
-			                <li><a href = "http://ceshi.alpha.dp:8080"> ALPHA 环境</a></li>
-			                <li><a href = "http://192.168.217.81:8080/"> BETA 环境</a></li>
-			                <li><a href = "http://10.124.3.108:8080/"> PPE 环境</a></li>
+			                <li><a href = "http://ceshi.alpha.dp:8080"> DEV 环境</a></li>
+			                <li><a href = "http://192.168.199.120/"> BETA 环境</a></li>
 		              	</ul>
 		        </li>		            
                 <li>

@@ -312,6 +312,8 @@ public class HttpClient {
 		HttpPost httpPost = new HttpPost(url);
 //		String encoderJson = URLEncoder.encode(parameters, "UTF-8");
 		httpPost.addHeader(HTTP.CONTENT_TYPE, "application/json");
+		//大后台验证
+		httpPost.addHeader("authorization", "Basic YV81Mzo4ZDk2OWVlZjZlY2FkM2MyOWEzYTYyOTI4MGU2ODZjZjBjM2Y1ZDVhODZhZmYzY2ExMjAyMGM5MjNhZGM2Yzky");
 		StringEntity se = new StringEntity(parameters);
 		se.setContentType("application/json");
 		httpPost.setEntity(se);

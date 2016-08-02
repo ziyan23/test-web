@@ -3,11 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<title>云马</title>
+<title>探索业务</title>
 <%@ include file="decorators.jsp" %>
 <div class="page-header" align="center">
   <h1>
-    <small>云马相关</small>
+    <small>探索业务</small>
   </h1>
 </div>
 <div align="center">
