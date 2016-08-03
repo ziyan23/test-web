@@ -3,10 +3,12 @@ package com.ymm.model;
 import com.ymm.auth.URLEnum;
 import com.ymm.core.BaseURL;
 import com.ymm.core.JSONDecoder;
+import com.ymm.db.YmmDataBase;
 import com.ymm.http.HttpClient;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Map;
 
 /**
  * Created by gujie on 16/8/1.
@@ -42,8 +44,20 @@ public class YmmAction extends BaseURL {
         JSONDecoder jsonDecoder = new JSONDecoder();
         String codeResult = jsonDecoder.toJsonObj(requestResult).get("info").getJsonString();
 
-   //     System.out.println(codeResult);
-   //     System.out.println(requestResult);
         return codeResult;
+    }
+
+    // 更新用户余额
+    public int YmmUpdateBalanceAction(String telephoneNun,int accoutBalance) throws ParseException, IOException {
+
+        YmmDataBase ymmDataBase = getYmmDataBase();
+        ymmDataBase.execute("update accounts a inner join users u on a.user_id = u.user_id set a.account_balance = "+accoutBalance+" where u.telephone = "+telephoneNun+";");
+        Map<String, Object> queryList = ymmDataBase.query("select a.account_balance from accounts a inner join users u on a.user_id = u.user_id where u.telephone = "+telephoneNun+";");
+        int accountBalance = Integer.parseInt(queryList.get("account_balance").toString());
+        return accountBalance;
+    }
+
+    public static YmmDataBase getYmmDataBase() {
+        return new YmmDataBase("logistics");
     }
 }

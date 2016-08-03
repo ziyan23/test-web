@@ -30,15 +30,16 @@
       function results(verifycode){
         alert("验证码："+ verifycode)
       }
+
+      function accoutBalance(accoutBalance){
+        alert("当前余额为:"+ accoutBalance)
+      }
     </script>
-
     </thead>
-
     <tbody>
     <tr>
       <td>
         <form target="_blank" class="form-inline" role="form" action="/ymm/getverifycode" method="post">
-          <center>验证码:${requestScope.verifycode}</center>
           <div align="center">
             <table>
               <tr>
@@ -49,7 +50,7 @@
                   </div>
                 </td>
                 <td width="250" align="left">
-                  <button class="btn btn-primary active col-sm-4" type="submit">查 看</button>
+                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="results(${requestScope.verifycode})">查 看</button>
                   <button class="btn btn-default col-sm-4" type="reset">重 置</button>
                 </td>
               </tr>
@@ -59,6 +60,31 @@
       </td>
     </tr>
 
+    <tr>
+      <td>
+        <form target="_blank" class="form-inline" role="form" action="/ymm/updateBalance" method="post">
+          <div align="center">
+            <table>
+              <tr>
+                <td width="300" align="left"><h4>用户余额更新</h4></td>
+                <td width="750" align="left">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="telephoneNum" placeholder="telephoneNum">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="accoutBalance" placeholder="accoutBalance">
+                  </div>
+                </td>
+                <td width="250" align="left">
+                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="accoutBalance(${requestScope.accoutBalance})">查 看</button>
+                  <button class="btn btn-default col-sm-4" type="reset">重 置</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </td>
+    </tr>
     </tbody>
   </table>
 </div>

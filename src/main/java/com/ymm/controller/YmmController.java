@@ -6,7 +6,9 @@ package com.ymm.controller;
 
 import com.ymm.model.YmmAction;
 import com.ymm.request.GetverifycodeRequest;
+import com.ymm.request.UpdateBalanceRequest;
 import com.ymm.response.GetverifycodeResponse;
+import com.ymm.response.UpdateBalanceResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,6 +33,17 @@ public class YmmController {
 
         ModelAndView mad = new ModelAndView("ymm");
         mad.addObject("verifycode",getverifycodeResponse.getVerifyCode());
+        return mad;
+    }
+
+    @RequestMapping(value = "/updateBalance", method = RequestMethod.POST)
+    public ModelAndView YmmUpdateBalanceController(UpdateBalanceRequest updateBalanceRequest) throws IOException, ParseException {
+        YmmAction ymmAction = new YmmAction();
+        UpdateBalanceResponse updateBalanceResponse = new UpdateBalanceResponse();
+        updateBalanceResponse.setAccoutBalance(ymmAction.YmmUpdateBalanceAction(updateBalanceRequest.getTelephoneNum(),updateBalanceRequest.getAccoutBalance()));
+
+        ModelAndView mad = new ModelAndView("ymm");
+        mad.addObject("accoutBalance",updateBalanceResponse.getAccoutBalance());
         return mad;
     }
 }
