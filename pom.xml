@@ -134,7 +134,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <warName>${artifactId}-${version}</warName>
+          <warName>${artifactId}</warName>
         </configuration>
       </plugin>
       <plugin>
