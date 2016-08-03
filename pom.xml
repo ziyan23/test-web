@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.ymm</groupId>
-  <artifactId>test-web</artifactId>
+  <artifactId>ymm-test-web</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>test-web Maven Webapp</name>
