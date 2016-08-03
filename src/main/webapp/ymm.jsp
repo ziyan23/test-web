@@ -39,7 +39,7 @@
     <tbody>
     <tr>
       <td>
-        <form target="_blank" class="form-inline" role="form" action="/ymm/getverifycode" method="post">
+        <form target="_blank" name="getverifycode" class="form-inline" role="form" action="/ymm/getverifycode" method="post" onsubmit="return check()">
           <div align="center">
             <table>
               <tr>
@@ -89,6 +89,16 @@
   </table>
 </div>
 
+<script LANGUAGE="javascript">
+  function check()
+  {
+    if(document.getverifycode.telephoneNum.value.length==0){
+      alert("输入不能为空!");
+      document.getverifycode.telephoneNum.focus();
+      return false;
+    }
+  }
+</script>
 
 </body>
 </html>
