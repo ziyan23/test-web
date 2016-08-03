@@ -119,18 +119,30 @@
 
   </dependencies>
 
-
   <build>
-    <finalName>ymm-test-web</finalName>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.5</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <encoding>UTF-8</encoding>
         </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <warName>${artifactId}-${version}</warName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>external.atlassian.jgitflow</groupId>
+        <artifactId>jgitflow-maven-plugin</artifactId>
+        <version>1.0-m4</version>
       </plugin>
     </plugins>
   </build>
+
 </project>
