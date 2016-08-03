@@ -117,12 +117,11 @@
       <version>6.8.21</version>
     </dependency>
 
-
   </dependencies>
 
 
   <build>
-    <finalName>test-web</finalName>
+    <finalName>ymm-test-web</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
