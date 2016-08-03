@@ -39,7 +39,7 @@
     <tbody>
     <tr>
       <td>
-        <form target="_blank" name="getverifycode" class="form-inline" role="form" action="/ymm/getverifycode" method="post" onsubmit="return check()">
+        <form target="_blank" name="getverifycode" class="form-inline" role="form" action="/ymm/getverifycode" method="post" onsubmit="return results(${requestScope.verifycode})">
           <div align="center">
             <table>
               <tr>
@@ -50,7 +50,7 @@
                   </div>
                 </td>
                 <td width="250" align="left">
-                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="results(${requestScope.verifycode})">查 看</button>
+                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="getverifycodeheck()">查 看</button>
                   <button class="btn btn-default col-sm-4" type="reset">重 置</button>
                 </td>
               </tr>
@@ -62,7 +62,7 @@
 
     <tr>
       <td>
-        <form target="_blank" class="form-inline" role="form" action="/ymm/updateBalance" method="post">
+        <form target="_blank" name="updateBalance" class="form-inline" role="form" action="/ymm/updateBalance" method="post" onsubmit="return accoutBalance(${requestScope.accoutBalance})">
           <div align="center">
             <table>
               <tr>
@@ -76,7 +76,7 @@
                   </div>
                 </td>
                 <td width="250" align="left">
-                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="accoutBalance(${requestScope.accoutBalance})">查 看</button>
+                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="updateBalancecodeCheck()">查 看</button>
                   <button class="btn btn-default col-sm-4" type="reset">重 置</button>
                 </td>
               </tr>
@@ -90,14 +90,29 @@
 </div>
 
 <script LANGUAGE="javascript">
-  function check()
+  function getverifycodeheck()
   {
     if(document.getverifycode.telephoneNum.value.length==0){
-      alert("输入不能为空!");
+    alert("手机号输入不能为空!");
+    document.getverifycode.telephoneNum.focus();
+    return false;
+    }
+  }
+
+  function updateBalancecodeCheck()
+  {
+    if(document.updateBalance.telephoneNum.value.length==0){
+      alert("手机号输入不能为空!");
       document.getverifycode.telephoneNum.focus();
       return false;
     }
+    if(document.updateBalance.accoutBalance.value.length==0){
+      alert("余额输入不能为空!");
+      document.getverifycode.accoutBalance.focus();
+      return false;
+    }
   }
+
 </script>
 
 </body>
