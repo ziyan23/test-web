@@ -40,7 +40,7 @@ public class YmmController {
     public ModelAndView YmmUpdateBalanceController(UpdateBalanceRequest updateBalanceRequest) throws IOException, ParseException {
         YmmAction ymmAction = new YmmAction();
         UpdateBalanceResponse updateBalanceResponse = new UpdateBalanceResponse();
-        updateBalanceResponse.setAccoutBalance(ymmAction.YmmUpdateBalanceAction(updateBalanceRequest.getTelephoneNum(),updateBalanceRequest.getAccoutBalance()));
+        updateBalanceResponse.setAccoutBalance(ymmAction.YmmUpdateBalanceAction(updateBalanceRequest.getTelephoneNum(),updateBalanceRequest.getAccountBalance()));
 
         ModelAndView mad = new ModelAndView("ymm");
         mad.addObject("accoutBalance",updateBalanceResponse.getAccoutBalance());

@@ -4,10 +4,10 @@
 <html>
 <head>
     <title>LittleWeb</title>
-    <link href="/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/docs-assets/css/docs.css" rel="stylesheet">
-    <script src="<%=request.getContextPath() %> /dist/js/jquery.js"></script>
-    <script src="<%=request.getContextPath() %> /dist/js/bootstrap-dropdown-v1.js"></script> 
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link href="docs-assets/css/docs.css" rel="stylesheet">
+    <script src="<%=request.getContextPath() %> dist/js/jquery.js"></script>
+    <script src="<%=request.getContextPath() %> dist/js/bootstrap-dropdown-v1.js"></script>
 </head>
 <body>
   <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">

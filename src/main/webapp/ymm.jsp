@@ -1,4 +1,3 @@
-<%@ page import="com.ymm.response.GetverifycodeResponse" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,8 +30,31 @@
         alert("验证码："+ verifycode)
       }
 
-      function accoutBalance(accoutBalance){
-        alert("当前余额为:"+ accoutBalance)
+      function accountBalance(accountBalance){
+        alert("当前余额为:"+ accountBalance)
+      }
+
+      function getverifycodeheck()
+      {
+        if(document.getverifycode.telephoneNum.value.length==0){
+          alert("手机号输入不能为空!");
+          document.getverifycode.telephoneNum.focus();
+          return false;
+        }
+      }
+
+      function updateBalancecodeCheck()
+      {
+        if(document.updateBalance.telephoneNum.value.length==0){
+          alert("手机号输入不能为空!");
+          document.getverifycode.telephoneNum.focus();
+          return false;
+        }
+        if(document.updateBalance.accountBalance.value.length==0){
+          alert("余额输入不能为空!");
+          document.getverifycode.accountBalance.focus();
+          return false;
+        }
       }
     </script>
     </thead>
@@ -62,7 +84,7 @@
 
     <tr>
       <td>
-        <form target="_blank" name="updateBalance" class="form-inline" role="form" action="/ymm/updateBalance" method="post" onsubmit="return accoutBalance(${requestScope.accoutBalance})">
+        <form target="_blank" name="updateBalance" class="form-inline" role="form" action="/ymm/updateBalance" method="post" onsubmit="return accountBalance(${requestScope.accountBalance})">
           <div align="center">
             <table>
               <tr>
@@ -72,7 +94,7 @@
                     <input type="text" class="form-control" name="telephoneNum" placeholder="telephoneNum">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" name="accoutBalance" placeholder="accoutBalance">
+                    <input type="text" class="form-control" name="accountBalance" placeholder="accountBalance">
                   </div>
                 </td>
                 <td width="250" align="left">
@@ -88,32 +110,6 @@
     </tbody>
   </table>
 </div>
-
-<script LANGUAGE="javascript">
-  function getverifycodeheck()
-  {
-    if(document.getverifycode.telephoneNum.value.length==0){
-    alert("手机号输入不能为空!");
-    document.getverifycode.telephoneNum.focus();
-    return false;
-    }
-  }
-
-  function updateBalancecodeCheck()
-  {
-    if(document.updateBalance.telephoneNum.value.length==0){
-      alert("手机号输入不能为空!");
-      document.getverifycode.telephoneNum.focus();
-      return false;
-    }
-    if(document.updateBalance.accoutBalance.value.length==0){
-      alert("余额输入不能为空!");
-      document.getverifycode.accoutBalance.focus();
-      return false;
-    }
-  }
-
-</script>
 
 </body>
 </html>

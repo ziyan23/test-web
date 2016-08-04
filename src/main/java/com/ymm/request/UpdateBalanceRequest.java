@@ -10,7 +10,7 @@ public class UpdateBalanceRequest {
 
     private String telephoneNum;
 
-    private int accoutBalance;
+    private int accountBalance;
 
 
     public String getTelephoneNum() {
@@ -21,11 +21,12 @@ public class UpdateBalanceRequest {
         this.telephoneNum = telephoneNum;
     }
 
-    public int getAccoutBalance() {
-        return accoutBalance;
+
+    public int getAccountBalance() {
+        return accountBalance;
     }
 
-    public void setAccoutBalance(int accoutBalance) {
-        this.accoutBalance = accoutBalance;
+    public void setAccountBalance(int accountBalance) {
+        this.accountBalance = accountBalance;
     }
 }
