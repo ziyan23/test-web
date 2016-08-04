@@ -61,7 +61,7 @@
     <tbody>
     <tr>
       <td>
-        <form target="_blank" name="getverifycode" class="form-inline" role="form" action="/ymm/getverifycode" method="post" onsubmit="return results(${requestScope.verifycode})">
+        <form target="_blank" name="getverifycode" class="form-inline" role="form" action="ymm/getverifycode" method="post" onsubmit="return results(${requestScope.verifycode})">
           <div align="center">
             <table>
               <tr>
@@ -84,7 +84,7 @@
 
     <tr>
       <td>
-        <form target="_blank" name="updateBalance" class="form-inline" role="form" action="/ymm/updateBalance" method="post" onsubmit="return accountBalance(${requestScope.accountBalance})">
+        <form target="_blank" name="updateBalance" class="form-inline" role="form" action="ymm/updateBalance" method="post" onsubmit="return accountBalance(${requestScope.accountBalance})">
           <div align="center">
             <table>
               <tr>

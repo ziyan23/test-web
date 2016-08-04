@@ -22,7 +22,7 @@ import java.text.ParseException;
  */
 
 @Controller
-@RequestMapping(value = "/ymm")
+@RequestMapping(value = "ymm")
 public class YmmController {
 
     @RequestMapping(value = "/getverifycode", method = RequestMethod.POST)
