@@ -6,14 +6,14 @@
     <title>LittleWeb</title>
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="docs-assets/css/docs.css" rel="stylesheet">
-    <script src="<%=request.getContextPath() %> dist/js/jquery.js"></script>
-    <script src="<%=request.getContextPath() %> dist/js/bootstrap-dropdown-v1.js"></script>
+    <script src="dist/js/jquery.js"></script>
+    <script src="dist/js/bootstrap-dropdown-v1.js"></script>
 </head>
 <body>
   <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
     <div class="container">
         <div class="navbar-header">
-            <a href="/index.jsp" class="navbar-brand">LittleWeb</a>
+            <a href="index.jsp" class="navbar-brand">LittleWeb</a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
@@ -25,19 +25,19 @@
 		              	</ul>
 		        </li>		            
                 <li>
-                    <a href="/yunma.jsp">云马</a>
+                    <a href="yunma.jsp">云马</a>
                 </li>
                 <li>
-                    <a href="/ymm.jsp">运满满</a>
+                    <a href="ymm.jsp">运满满</a>
                 </li>
                 <li>
-                    <a href="/new.jsp">探索业务</a>
+                    <a href="new.jsp">探索业务</a>
                 </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/help.jsp">帮助</a>
+                    <a href="help.jsp">帮助</a>
                 </li>
             </ul>
         </nav>
