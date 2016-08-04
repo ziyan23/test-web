@@ -2383,7 +2383,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   font-color:#428bca;
-  background-image: url(/dist/img/bg_login.jpg);
+  background-image: url(dist/img/bg1.png);
 }
 
 .btn-primary.disabled,
