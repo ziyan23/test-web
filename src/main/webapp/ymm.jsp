@@ -89,8 +89,12 @@
       cache: true,
       type: "POST",
       url:"ymm/updateBalance",
-      data:$.param(data),// 你的formid
+      data:$.param(data),
       dataType:"text",
+      error: function(data) {
+        console.log(data);
+        alert("看看是否参数输错啦~");
+      },
       success : function(data) {
         alert("用户余额更新成功,当前余额为:" + data);
       }
@@ -107,11 +111,16 @@
       cache: true,
       type: "POST",
       url:"ymm/getverifycode",
-      data:$.param(data),// 你的formid
+      data:$.param(data),
       dataType:"text",
+      error: function(data) {
+        console.log(data);
+        alert("看看是否参数输错啦~");
+      },
       success : function(data) {
         alert("验证码为:" + data);
       }
+
     });
     return false;
   }
