@@ -2,14 +2,14 @@ package com.ymm.response;
 
 public class UpdateBalanceResponse extends ResultResponse {
 
-    private int accoutBalance;
+    private int accountBalance;
 
 
-    public int getAccoutBalance() {
-        return accoutBalance;
+    public int getAccountBalance() {
+        return accountBalance;
     }
 
-    public void setAccoutBalance(int accoutBalance) {
-        this.accoutBalance = accoutBalance;
+    public void setAccountBalance(int accountBalance) {
+        this.accountBalance = accountBalance;
     }
 }

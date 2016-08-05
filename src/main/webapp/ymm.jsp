@@ -25,91 +25,97 @@
       </td>
     </tr>
 
-    <script language="javascript">
-      function results(verifycode){
-        alert("验证码："+ verifycode)
-      }
-
-      function accountBalance(accountBalance){
-        alert("当前余额为:"+ accountBalance)
-      }
-
-      function getverifycodeheck()
-      {
-        if(document.getverifycode.telephoneNum.value.length==0){
-          alert("手机号输入不能为空!");
-          document.getverifycode.telephoneNum.focus();
-          return false;
-        }
-      }
-
-      function updateBalancecodeCheck()
-      {
-        if(document.updateBalance.telephoneNum.value.length==0){
-          alert("手机号输入不能为空!");
-          document.getverifycode.telephoneNum.focus();
-          return false;
-        }
-        if(document.updateBalance.accountBalance.value.length==0){
-          alert("余额输入不能为空!");
-          document.getverifycode.accountBalance.focus();
-          return false;
-        }
-      }
-    </script>
     </thead>
     <tbody>
     <tr>
       <td>
-        <form target="_blank" name="getverifycode" class="form-inline" role="form" action="ymm/getverifycode" method="post" onsubmit="return results(${requestScope.verifycode})">
+        <div name="getverifycode" name="getverifycode" class="form-inline">
           <div align="center">
             <table>
               <tr>
                 <td width="300" align="left"><h4>验证码查询</h4></td>
                 <td width="750" align="left">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="telephoneNum" placeholder="telephoneNum">
+                    <input id="telephoneCode" type="text" class="form-control" name="telephoneNum" placeholder="telephoneNum">
                   </div>
                 </td>
                 <td width="250" align="left">
-                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="getverifycodeheck()">查 看</button>
+                  <button class="btn btn-primary active col-sm-4" onclick="getverifycode()">查 看</button>
                   <button class="btn btn-default col-sm-4" type="reset">重 置</button>
                 </td>
               </tr>
             </table>
           </div>
-        </form>
+        </div>
       </td>
     </tr>
 
     <tr>
       <td>
-        <form target="_blank" name="updateBalance" class="form-inline" role="form" action="ymm/updateBalance" method="post" onsubmit="return accountBalance(${requestScope.accountBalance})">
+       <div id="updateBalance" name="updateBalance" class="form-inline">
           <div align="center">
             <table>
               <tr>
                 <td width="300" align="left"><h4>用户余额更新</h4></td>
                 <td width="750" align="left">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="telephoneNum" placeholder="telephoneNum">
+                    <input id="telephone" type="text" class="form-control" name="telephoneNum" placeholder="telephoneNum">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" name="accountBalance" placeholder="accountBalance">
+                    <input id="balance" type="text" class="form-control" name="accountBalance" placeholder="accountBalance">
                   </div>
                 </td>
                 <td width="250" align="left">
-                  <button class="btn btn-primary active col-sm-4" type="submit" onclick="updateBalancecodeCheck()">查 看</button>
+                  <button class="btn btn-primary active col-sm-4" onclick="updateBalance()">提 交</button>
                   <button class="btn btn-default col-sm-4" type="reset">重 置</button>
                 </td>
               </tr>
             </table>
           </div>
-        </form>
+        </div>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
+
+<script>
+  function updateBalance() {
+    var data = {
+      telephoneNum:$("#telephone").val(),
+      accountBalance:$("#balance").val()
+    }
+    $.ajax({
+      cache: true,
+      type: "POST",
+      url:"ymm/updateBalance",
+      data:$.param(data),// 你的formid
+      dataType:"text",
+      success : function(data) {
+        alert("用户余额更新成功,当前余额为:" + data);
+      }
+    });
+    return false;
+  }
+
+
+  function getverifycode() {
+    var data = {
+      telephoneNum:$("#telephoneCode").val()
+    }
+    $.ajax({
+      cache: true,
+      type: "POST",
+      url:"ymm/getverifycode",
+      data:$.param(data),// 你的formid
+      dataType:"text",
+      success : function(data) {
+        alert("验证码为:" + data);
+      }
+    });
+    return false;
+  }
+</script>
 
 </body>
 </html>
